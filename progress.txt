@@ -1,0 +1,138 @@
+# Chronicle UI Overhaul - Progress Log
+
+## Codebase Patterns
+- Use Tailwind chronicle-* design tokens
+- SvelteKit 2 with Svelte 5 syntax
+- Supabase for backend
+- Run pnpm check for validation
+
+---
+
+## 2026-01-17 - All Stories Complete
+
+### US-001: Create /chronicle route structure ✅
+- Created src/routes/chronicle/+page.svelte
+- Created src/routes/chronicle/+page.server.ts
+
+### US-002: Create /home placeholder ✅
+- Created src/routes/home/+page.svelte with logo and Enter Chronicle button
+
+### US-003: Implement viewport-locked layout ✅
+- Root: h-dvh flex flex-col overflow-hidden
+- Main: flex-1 min-h-0
+- Grid: h-full
+
+### US-004: Enable independent column scrolling ✅
+- Added overflow-y-auto to Notes, News, Videos columns
+
+### US-005: Horizontal scroll for GUIDES ✅
+- Changed to flex overflow-x-auto with scroll-smooth
+- Cards have flex-shrink-0 w-[45%]
+
+### US-006: Remove footer from chronicle page ✅
+- Removed footer element
+
+### US-007: Move article routes to /chronicle/[slug] ✅
+- Created src/routes/chronicle/[slug]/+page.svelte
+- Created src/routes/chronicle/[slug]/+page.server.ts
+
+### US-008: Add breadcrumb navigation to articles ✅
+- Format: CHRONICLE // [ Category ] / Title
+- Author and date below breadcrumb
+
+### US-009: Update all internal links ✅
+- All article links now use /chronicle/{slug}
+- Nav Chronicle link points to /chronicle
+- Logo stays as /
+
+### US-010: Create root redirect ✅
+- / redirects to /home with 302
+
+---
+
+## 2026-01-17 - New PRD Created
+
+### PRD: Amp Design Transformation (tasks/prd-amp-design.json)
+Created new PRD with 17 user stories (US-011 through US-027):
+
+**Article Page Redesign (US-011 to US-015):**
+- Full-width hero images
+- Breadcrumb format: CHRONICLE / [CATEGORY] | [TITLE]
+- Date with left accent border line
+- Large italic serif title (Playfair Display)
+- Body prose styling for rich content
+
+**Footer Redesign (US-016 to US-017):**
+- Expanded 4-column footer (Product, Resources, Guides, Community)
+- Logo with "All Systems Operational" status + Security/Terms links
+
+**New Pages (US-018 to US-027):**
+- /manual, /models, /free, /pricing
+- /podcast, /press-kit, /security, /terms
+- /guides/how-to-build-an-agent, /guides/context-management
+
+---
+
+## 2026-01-17 - Amp Design Transformation Complete
+
+### US-011–015: Article Page Redesign ✅
+- Full-width hero images (edge-to-edge)
+- Breadcrumb: CHRONICLE / CATEGORY | TITLE
+- Date with left accent border (chronicle-accent)
+- Large italic Playfair Display title (text-5xl to text-7xl)
+- Prose styling with underlined links, proper bullets, image margins
+
+### US-016–017: Footer Redesign ✅
+- 4-column layout: Product, Resources, Guides, Community
+- Logo with "All Systems Operational" status
+- Security and Terms links
+
+### US-018–027: New Pages Created ✅
+- /manual - Owner's Manual
+- /models - Models overview
+- /free - The 7th Signal Free
+- /pricing - Pricing tiers (Free, Pro, Enterprise)
+- /podcast - Podcast episodes
+- /press-kit - Press Kit / brand assets
+- /security - Security policy
+- /terms - Terms of Service
+- /guides/how-to-build-an-agent - Guide
+- /guides/context-management - Guide
+
+---
+
+## 2026-01-17 - Design Alignment with Amp Chronicle
+
+### Analysis & Comparison
+- Analyzed https://ampcode.com/chronicle and https://ampcode.com/news/tab-tab-dead
+- Identified key design patterns: vertical grid lines, [CATEGORY] bracket format, full-width images
+
+### Chronicle Page Updates ✅
+- Changed logo from "The 7th Signal" to "amp" style
+- Added "Get Started" button (golden accent) and "Sign In" link
+- Added Amp-style vertical grid line pattern (repeating-linear-gradient)
+- Updated page title to "Chronicle - amp"
+- Backdrop blur on header
+
+### Article Page Updates ✅
+1. **Header/Breadcrumb** - Amp style: `CHRONICLE / [NEWS] TAB, TAB, DEAD`
+2. **Dropdown chevron** - Added menu chevron icon on the right
+3. **Hero image** - Full edge-to-edge width, removed max-height constraint
+4. **Vertical grid pattern** - CSS repeating gradients creating subtle vertical lines
+5. **Typography alignment** - Date with left accent border, large italic serif title
+6. **Footer** - Changed logo to "amp"
+
+### Design Elements Aligned
+| Element | Amp Style | Our Implementation | Status |
+|---------|-----------|-------------------|--------|
+| Logo | "amp" | ✅ "amp" | ✅ Match |
+| Breadcrumb | CHRONICLE / [NEWS] TITLE | ✅ CHRONICLE / [NEWS] TITLE | ✅ Match |
+| Grid lines | Vertical dashed pattern | ✅ CSS gradient pattern | ✅ Match |
+| Hero image | Full-width, no constraint | ✅ Full-width | ✅ Match |
+| Date format | JANUARY 15, 2026 | ✅ JANUARY 14, 2026 | ✅ Match |
+| Title style | Large italic serif | ✅ Playfair Display italic | ✅ Match |
+| Chevron | Dropdown menu icon | ✅ SVG chevron | ✅ Match |
+
+---
+pnpm check: 0 errors, 47 warnings (known @apply false positives)
+

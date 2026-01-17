@@ -12,7 +12,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const { data: author } = await supabase
       .from('authors')
       .select('id')
-      .eq('slug', 'alex-chen')
+      .eq('slug', 'joe-lucky')
       .single();
 
     if (!author) {

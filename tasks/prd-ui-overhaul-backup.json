@@ -1,0 +1,145 @@
+{
+  "project": "Chronicle",
+  "branchName": "ralph/ui-overhaul",
+  "description": "Transform Chronicle into viewport-locked 3-column layout with proper routing",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Create /chronicle route structure",
+      "description": "Move blog layout from / to /chronicle",
+      "acceptanceCriteria": [
+        "Create src/routes/chronicle/+page.svelte",
+        "Create src/routes/chronicle/+page.server.ts",
+        "Copy content from current root page files",
+        "pnpm check passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "Created chronicle route with copies of root page files"
+    },
+    {
+      "id": "US-002",
+      "title": "Create /home placeholder",
+      "description": "Create marketing homepage at /home",
+      "acceptanceCriteria": [
+        "Create src/routes/home/+page.svelte",
+        "Simple placeholder with logo and link to /chronicle",
+        "pnpm check passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "Created marketing homepage with logo and Enter Chronicle button"
+    },
+    {
+      "id": "US-003",
+      "title": "Implement viewport-locked layout",
+      "description": "Make blog page fill viewport exactly",
+      "acceptanceCriteria": [
+        "Root container: h-dvh flex flex-col overflow-hidden",
+        "Main: flex-1 min-h-0",
+        "Grid: h-full",
+        "Page does not scroll beyond viewport",
+        "pnpm check passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": "Implemented viewport-locked layout with proper flex structure"
+    },
+    {
+      "id": "US-004",
+      "title": "Enable independent column scrolling",
+      "description": "Each column scrolls independently",
+      "acceptanceCriteria": [
+        "Notes column has overflow-y-auto",
+        "News column has overflow-y-auto",
+        "Videos column has overflow-y-auto",
+        "Each column scrolls independently",
+        "pnpm check passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": "Added overflow-y-auto to all three columns"
+    },
+    {
+      "id": "US-005",
+      "title": "Horizontal scroll for GUIDES",
+      "description": "GUIDES section scrolls horizontally",
+      "acceptanceCriteria": [
+        "Change grid to flex overflow-x-auto",
+        "Cards have flex-shrink-0 w-[45%]",
+        "Smooth horizontal scroll works",
+        "pnpm check passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": "Changed GUIDES to flex container with horizontal scroll"
+    },
+    {
+      "id": "US-006",
+      "title": "Remove footer from chronicle page",
+      "description": "Blog page should not have footer",
+      "acceptanceCriteria": [
+        "Footer removed from /chronicle page",
+        "pnpm check passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": "Removed footer element from chronicle page"
+    },
+    {
+      "id": "US-007",
+      "title": "Move article routes to /chronicle/[slug]",
+      "description": "Articles accessible under /chronicle/",
+      "acceptanceCriteria": [
+        "Create src/routes/chronicle/[slug]/+page.svelte",
+        "Create src/routes/chronicle/[slug]/+page.server.ts",
+        "Article pages work at /chronicle/[slug]",
+        "pnpm check passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": "Created article detail pages under /chronicle/[slug]"
+    },
+    {
+      "id": "US-008",
+      "title": "Add breadcrumb navigation to articles",
+      "description": "Article pages show breadcrumb",
+      "acceptanceCriteria": [
+        "Breadcrumb: CHRONICLE // [CATEGORY] / [TITLE]",
+        "Category shown in brackets like [ Note ]",
+        "Author and date shown below breadcrumb",
+        "pnpm check passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": "Added breadcrumb with CHRONICLE // [ Category ] / Title format"
+    },
+    {
+      "id": "US-009",
+      "title": "Update all internal links",
+      "description": "Fix all href attributes",
+      "acceptanceCriteria": [
+        "Blog links: /{slug} to /chronicle/{slug}",
+        "Nav Chronicle link to /chronicle",
+        "Logo link stays as /",
+        "pnpm check passes"
+      ],
+      "priority": 9,
+      "passes": true,
+      "notes": "Updated all article links to /chronicle/{slug}, nav link to /chronicle"
+    },
+    {
+      "id": "US-010",
+      "title": "Create root redirect",
+      "description": "Redirect / to /home",
+      "acceptanceCriteria": [
+        "Create src/routes/+page.server.ts with redirect",
+        "Visiting / redirects to /home",
+        "pnpm check passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": "Root page now redirects to /home with 302"
+    }
+  ]
+}

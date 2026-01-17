@@ -1,6 +1,6 @@
-# Chronicle - Content Platform
+# The 7th Signal - Content Platform
 
-A modern content platform inspired by [ampcode.com/chronicle](https://ampcode.com/chronicle), built with SvelteKit, Tailwind CSS, and Supabase.
+A modern content platform built with SvelteKit, Tailwind CSS, and Supabase.
 
 ## Features
 
@@ -60,12 +60,12 @@ A modern content platform inspired by [ampcode.com/chronicle](https://ampcode.co
 
 4. **Open your browser**
    
-   Visit `http://localhost:5173` to see your Chronicle site!
+   Visit `http://localhost:5173` to see your The 7th Signal site!
 
 ## Project Structure
 
 ```
-chronicle-clone/
+the-7th-signal/
 ├── src/
 │   ├── lib/
 │   │   └── supabase.ts          # Supabase client configuration
@@ -146,4 +146,4 @@ MIT License - feel free to use this project as a starting point for your own con
 
 ## Acknowledgments
 
-Inspired by the beautiful design of [Amp's Chronicle](https://ampcode.com/chronicle).
+Built with modern web technologies for content management.

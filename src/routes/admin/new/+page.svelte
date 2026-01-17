@@ -64,7 +64,7 @@
 </script>
 
 <svelte:head>
-  <title>New Article - Chronicle Admin</title>
+  <title>New Article - The 7th Signal Admin</title>
 </svelte:head>
 
 <div class="min-h-screen bg-stone-50">
@@ -73,7 +73,7 @@
     <nav class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-8">
-          <a href="/" class="text-2xl font-bold text-stone-900">Chronicle</a>
+          <a href="/" class="text-2xl font-bold text-stone-900">The 7th Signal</a>
           <span class="text-sm text-stone-500">Admin › New Article</span>
         </div>
         <div class="flex items-center gap-4">
@@ -87,7 +87,7 @@
   <main class="mx-auto max-w-4xl px-6 py-12">
     <div class="mb-8">
       <h1 class="text-3xl font-bold text-stone-900 mb-2">Create New Article</h1>
-      <p class="text-stone-600">Add a new article to your Chronicle</p>
+      <p class="text-stone-600">Add a new article to The 7th Signal</p>
     </div>
 
     {#if error}

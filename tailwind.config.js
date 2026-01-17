@@ -5,16 +5,23 @@ export default {
     extend: {
       colors: {
         chronicle: {
-          bg: '#091c1f', // Main background - very dark teal
-          text: '#f7fff5', // Primary text - off-white
-          'text-muted': '#b6c2bb', // Muted text - light gray-green
-          border: '#2f4040', // Borders and dividers - medium dark teal
-          accent: '#FF8C42', // Orange accent for buttons
+          bg: '#091c1f',
+          'bg-light': '#0d2528',
+          text: '#f7fff5',
+          'text-muted': '#8a9a92',
+          border: '#1e3538',
+          accent: '#c8a05c',
+          'accent-hover': '#d4b06c',
         },
       },
       fontFamily: {
-        serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Source Serif 4"', 'Georgia', 'serif'],
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'Monaco', 'monospace'],
+      },
+      letterSpacing: {
+        'widest': '0.2em',
       },
     },
   },

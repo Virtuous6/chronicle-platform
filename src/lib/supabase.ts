@@ -1,7 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 
-export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY);
+// Get environment variables with fallbacks
+// Vite provides these via import.meta.env at runtime
+const supabaseUrl = (import.meta.env.PUBLIC_SUPABASE_URL as string | undefined) 
+  || 'https://ktmxcvvhfeeuocjymzpy.supabase.co';
+const supabaseAnonKey = (import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string | undefined) 
+  || 'placeholder-key';
+
+// Create Supabase client - will work even with placeholder key for development
+// Actual queries will fail gracefully if credentials are invalid
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export type Article = {
   id: string;

@@ -1,6 +1,6 @@
-# Chronicle Deployment Guide
+# The 7th Signal Deployment Guide
 
-This guide covers deploying your Chronicle website to production.
+This guide covers deploying your The 7th Signal website to production.
 
 ## Pre-Deployment Checklist
 
@@ -104,13 +104,13 @@ For more control, deploy to your own server.
 2. **Transfer Files**
    ```bash
    # Copy build directory and dependencies
-   scp -r build package.json package-lock.json user@server:/var/www/chronicle
+   scp -r build package.json package-lock.json user@server:/var/www/the-7th-signal
    ```
 
 3. **Install Dependencies on Server**
    ```bash
    ssh user@server
-   cd /var/www/chronicle
+   cd /var/www/the-7th-signal
    npm install --production
    ```
 
@@ -124,7 +124,7 @@ For more control, deploy to your own server.
 5. **Start with PM2**
    ```bash
    npm install -g pm2
-   pm2 start build/index.js --name chronicle
+   pm2 start build/index.js --name the-7th-signal
    pm2 save
    pm2 startup
    ```
@@ -312,4 +312,4 @@ For deployment issues:
 
 ---
 
-**Your Chronicle site is ready to deploy!** Choose the option that best fits your needs and follow the steps above.
+**Your The 7th Signal site is ready to deploy!** Choose the option that best fits your needs and follow the steps above.

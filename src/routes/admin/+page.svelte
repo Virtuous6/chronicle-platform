@@ -3,7 +3,7 @@
 
   let { data }: { data: PageData } = $props();
 
-  const { articles } = data;
+  const articles = $derived(data.articles);
 
   function formatDate(dateString: string | null): string {
     if (!dateString) return 'Not published';
@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-  <title>Admin - Chronicle</title>
+  <title>Admin - The 7th Signal</title>
 </svelte:head>
 
 <div class="min-h-screen bg-stone-50">
@@ -22,7 +22,7 @@
     <nav class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-8">
-          <a href="/" class="text-2xl font-bold text-stone-900">Chronicle</a>
+          <a href="/" class="text-2xl font-bold text-stone-900">The 7th Signal</a>
           <span class="text-sm text-stone-500">Admin</span>
         </div>
         <div class="flex items-center gap-4">
@@ -39,7 +39,7 @@
   <main class="mx-auto max-w-7xl px-6 py-12">
     <div class="mb-8">
       <h1 class="text-3xl font-bold text-stone-900 mb-2">Articles</h1>
-      <p class="text-stone-600">Manage your Chronicle content</p>
+      <p class="text-stone-600">Manage your The 7th Signal content</p>
     </div>
 
     <!-- Stats -->

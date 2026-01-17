@@ -1,0 +1,279 @@
+{
+  "project": "Chronicle - Amp Design Transformation",
+  "branchName": "ralph/amp-design",
+  "description": "Transform The 7th Signal platform article pages and footer to match Amp's design aesthetic, plus create all required static pages for footer links",
+  "userStories": [
+    {
+      "id": "US-011",
+      "title": "Full-width hero images on article pages",
+      "description": "Article pages should display featured images as edge-to-edge hero images above the content area",
+      "acceptanceCriteria": [
+        "Hero image spans full viewport width (edge-to-edge)",
+        "Image positioned above the main content container",
+        "Image has appropriate aspect ratio (16:9 or similar)",
+        "Fallback styling when no image is present",
+        "pnpm check passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "Reference Amp's article layout with hero images bleeding to edges"
+    },
+    {
+      "id": "US-012",
+      "title": "Breadcrumb format update",
+      "description": "Update breadcrumb format to: CHRONICLE / [CATEGORY] | [TITLE] with proper separators",
+      "acceptanceCriteria": [
+        "Format: CHRONICLE / [CATEGORY] | [TITLE]",
+        "Slash separator between CHRONICLE and category",
+        "Pipe separator between category and title",
+        "Category in uppercase",
+        "CHRONICLE links to /chronicle",
+        "pnpm check passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "Current format uses // and /, need to change to / and |"
+    },
+    {
+      "id": "US-013",
+      "title": "Date with left accent border line",
+      "description": "Display article date with a gold/accent color vertical line on the left side",
+      "acceptanceCriteria": [
+        "Date has chronicle-accent colored left border",
+        "Border is approximately 2-3px wide",
+        "Padding between border and date text",
+        "Date formatted consistently (e.g., January 17, 2026)",
+        "pnpm check passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": "Accent border provides visual distinction for metadata"
+    },
+    {
+      "id": "US-014",
+      "title": "Large italic serif title styling",
+      "description": "Article title uses Playfair Display italic at very large size",
+      "acceptanceCriteria": [
+        "Title uses font-display (Playfair Display)",
+        "Title is italic",
+        "Size between text-5xl and text-7xl (responsive)",
+        "Proper line-height for large text",
+        "chronicle-text color",
+        "pnpm check passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": "Large editorial-style headline treatment"
+    },
+    {
+      "id": "US-015",
+      "title": "Body prose styling for rich content",
+      "description": "Article body has proper prose styling for inline links, bullet points, and images",
+      "acceptanceCriteria": [
+        "Inline links styled with chronicle-accent underline",
+        "Bullet points properly styled and indented",
+        "Paragraph spacing consistent",
+        "Images within content have proper margins",
+        "Blockquotes have distinctive styling",
+        "pnpm check passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": "Use Tailwind prose classes customized with chronicle tokens"
+    },
+    {
+      "id": "US-016",
+      "title": "Expanded 4-column footer layout",
+      "description": "Create footer with 4 columns: Product, Resources, Guides, Community",
+      "acceptanceCriteria": [
+        "Footer has 4 equal columns on desktop",
+        "Column headers: Product, Resources, Guides, Community",
+        "Product: Manual, Models, The 7th Signal Free, Pricing",
+        "Resources: Podcast, Press Kit",
+        "Guides: How to Build an Agent, Context Management",
+        "Community: placeholder links",
+        "Responsive: stacks on mobile",
+        "pnpm check passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": "Reference Amp footer layout with 4 distinct sections"
+    },
+    {
+      "id": "US-017",
+      "title": "Footer left section with logo and status",
+      "description": "Footer left side has logo, 'All Systems Operational' status, and Security/Terms links",
+      "acceptanceCriteria": [
+        "Logo displayed on left side of footer",
+        "Green dot with 'All Systems Operational' text",
+        "Security link pointing to /security",
+        "Terms link pointing to /terms",
+        "Proper spacing and alignment",
+        "pnpm check passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": "Status indicator adds trust signal"
+    },
+    {
+      "id": "US-018",
+      "title": "Create /manual page",
+      "description": "Create Owner's Manual page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/manual/+page.svelte",
+        "Page title: Owner's Manual",
+        "Basic content structure with sections",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": "Documentation/manual page"
+    },
+    {
+      "id": "US-019",
+      "title": "Create /models page",
+      "description": "Create Models page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/models/+page.svelte",
+        "Page title: Models",
+        "Placeholder content describing AI models",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 9,
+      "passes": true,
+      "notes": "Models overview page"
+    },
+    {
+      "id": "US-020",
+      "title": "Create /free page",
+      "description": "Create The 7th Signal Free page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/free/+page.svelte",
+        "Page title: The 7th Signal Free",
+        "Content about free tier/offering",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": "Free tier landing page"
+    },
+    {
+      "id": "US-021",
+      "title": "Create /pricing page",
+      "description": "Create Pricing page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/pricing/+page.svelte",
+        "Page title: Pricing",
+        "Pricing tiers or placeholder content",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "notes": "Pricing information page"
+    },
+    {
+      "id": "US-022",
+      "title": "Create /podcast page",
+      "description": "Create Podcast page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/podcast/+page.svelte",
+        "Page title: Podcast",
+        "Placeholder for podcast episodes",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": "Podcast listing page"
+    },
+    {
+      "id": "US-023",
+      "title": "Create /press-kit page",
+      "description": "Create Press Kit page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/press-kit/+page.svelte",
+        "Page title: Press Kit",
+        "Brand assets and press information",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": "Press and media resources"
+    },
+    {
+      "id": "US-024",
+      "title": "Create /security page",
+      "description": "Create Security page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/security/+page.svelte",
+        "Page title: Security",
+        "Security policy and practices content",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 14,
+      "passes": true,
+      "notes": "Security information page"
+    },
+    {
+      "id": "US-025",
+      "title": "Create /terms page",
+      "description": "Create Terms of Service page accessible from footer",
+      "acceptanceCriteria": [
+        "Route: src/routes/terms/+page.svelte",
+        "Page title: Terms of Service",
+        "Legal terms content or placeholder",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 15,
+      "passes": true,
+      "notes": "Terms of service legal page"
+    },
+    {
+      "id": "US-026",
+      "title": "Create /guides/how-to-build-an-agent page",
+      "description": "Create guide page for building an agent",
+      "acceptanceCriteria": [
+        "Route: src/routes/guides/how-to-build-an-agent/+page.svelte",
+        "Page title: How to Build an Agent",
+        "Guide content structure with sections",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 16,
+      "passes": true,
+      "notes": "Tutorial/guide page"
+    },
+    {
+      "id": "US-027",
+      "title": "Create /guides/context-management page",
+      "description": "Create guide page for context management",
+      "acceptanceCriteria": [
+        "Route: src/routes/guides/context-management/+page.svelte",
+        "Page title: Context Management",
+        "Guide content structure with sections",
+        "Consistent styling with chronicle tokens",
+        "Link from footer works",
+        "pnpm check passes"
+      ],
+      "priority": 17,
+      "passes": true,
+      "notes": "Tutorial/guide page"
+    }
+  ]
+}

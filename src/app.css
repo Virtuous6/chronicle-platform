@@ -1,3 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-chronicle-bg text-chronicle-text;
+  }
+}
+
+@layer base {
+  /* Custom scrollbars - minimal style */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 108, 0.4) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 116, 108, 0.4);
+    border-radius: 2px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 116, 108, 0.6);
+  }
+}
+
+@layer components {
+  .amp-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .section-label {
+    @apply text-xs font-medium tracking-widest text-chronicle-text-muted uppercase;
+    font-family: system-ui, sans-serif;
+  }
+
+  .featured-badge {
+    @apply text-chronicle-accent uppercase tracking-widest text-xs font-medium;
+  }
+
+  .article-date {
+    @apply text-xs tracking-wider text-chronicle-text-muted uppercase;
+    font-family: system-ui, sans-serif;
+  }
+
+  .article-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .article-title-italic {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .nav-link {
+    @apply text-sm text-chronicle-text-muted hover:text-chronicle-text transition-colors;
+  }
+
+  .dashboard-btn {
+    @apply px-4 py-1.5 text-sm border border-chronicle-accent text-chronicle-accent rounded hover:bg-chronicle-accent hover:text-chronicle-bg transition-colors;
+  }
+}

@@ -4,9 +4,8 @@
 
   let { data }: { data: PageData } = $props();
 
-  const { article } = data;
-
-  const htmlContent = marked(article.content);
+  const article = $derived(data.article);
+  const htmlContent = $derived(marked(article.content));
 
   function formatDate(dateString: string | null): string {
     if (!dateString) return '';
@@ -16,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{article.title} - Chronicle</title>
+  <title>{article.title} - The 7th Signal</title>
   <meta name="description" content={article.excerpt || ''} />
 </svelte:head>
 
@@ -26,7 +25,7 @@
     <nav class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-8">
-          <a href="/" class="text-2xl font-bold text-chronicle-text">Chronicle</a>
+          <a href="/" class="text-2xl font-bold text-chronicle-text">The 7th Signal</a>
           <div class="hidden md:flex gap-6">
             <a href="/" class="text-sm text-chronicle-text-muted hover:text-chronicle-text">Home</a>
             <a href="/about" class="text-sm text-chronicle-text-muted hover:text-chronicle-text">About</a>
@@ -61,7 +60,7 @@
     <!-- Article Header -->
     <div class="bg-chronicle-bg border border-chronicle-border p-8 mb-8">
       <div class="text-xs text-chronicle-text-muted uppercase tracking-wider mb-4">
-        <a href="/" class="hover:text-chronicle-text">Chronicle</a>
+        <a href="/" class="hover:text-chronicle-text">The 7th Signal</a>
         <span class="mx-2">›</span>
         <span class="capitalize">{article.category}</span>
         <span class="mx-2">›</span>
@@ -111,7 +110,7 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        Back to Chronicle
+        Back to The 7th Signal
       </a>
     </div>
   </article>
@@ -130,20 +129,20 @@
         <div>
           <h3 class="font-bold text-chronicle-text mb-4">Resources</h3>
           <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="/" class="hover:text-chronicle-text">Chronicle</a></li>
+            <li><a href="/" class="hover:text-chronicle-text">The 7th Signal</a></li>
             <li><a href="/" class="hover:text-chronicle-text">Documentation</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-chronicle-text mb-4">Community</h3>
           <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="#" class="hover:text-chronicle-text">Twitter</a></li>
-            <li><a href="#" class="hover:text-chronicle-text">GitHub</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-chronicle-text">Twitter</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-chronicle-text">GitHub</a></li>
           </ul>
         </div>
       </div>
       <div class="mt-8 pt-8 border-t border-chronicle-border text-sm text-chronicle-text-muted">
-        <p>&copy; 2026 Chronicle. All rights reserved.</p>
+        <p>&copy; 2026 The 7th Signal. All rights reserved.</p>
       </div>
     </div>
   </footer>

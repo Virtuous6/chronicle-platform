@@ -171,12 +171,12 @@
 </script>
 
 <svelte:head>
-  <title>The 7th Signal</title>
+  <title>Chronicle - The 7th Signal</title>
 </svelte:head>
 
-<div class="min-h-screen bg-chronicle-bg">
+<div class="h-dvh flex flex-col overflow-hidden bg-chronicle-bg chronicle-grid">
   <!-- Header -->
-  <header class="bg-chronicle-bg">
+  <header class="flex-shrink-0 bg-chronicle-bg/95 backdrop-blur-sm">
     <nav class="mx-auto max-w-[1600px] px-6 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
@@ -188,28 +188,29 @@
 
         <!-- Navigation -->
         <div class="flex items-center gap-8">
-          <a href="/" class="nav-link">The 7th Signal</a>
+          <a href="/chronicle" class="nav-link">Chronicle</a>
           <a href="/manual" class="nav-link">Owner's Manual</a>
           <a href="/models" class="nav-link">Models</a>
           <a href="/free" class="nav-link">The 7th Signal Free</a>
           <a href="/pricing" class="nav-link">Pricing</a>
-          <a href="/admin" class="dashboard-btn">Dashboard</a>
+          <a href="/admin" class="dashboard-btn">Sign In</a>
+          <a href="/admin" class="px-4 py-1.5 text-sm bg-chronicle-accent text-chronicle-bg rounded hover:bg-chronicle-accent-hover transition-colors">Get Started</a>
         </div>
       </div>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="mx-auto max-w-[1600px]">
-    <div class="grid grid-cols-12">
+  <main class="flex-1 min-h-0 mx-auto max-w-[1600px] w-full">
+    <div class="grid grid-cols-12 h-full">
       
       <!-- Left Column - Notes -->
-      <aside class="col-span-3 border-r border-chronicle-border px-6 py-6">
+      <aside class="col-span-3 border-r border-chronicle-border px-6 py-6 overflow-y-auto">
         <h2 class="section-label mb-6">NOTES</h2>
         
         <!-- Featured Note -->
         {#if featuredNotes[0]}
-          <a href="/{featuredNotes[0].slug}" class="block group mb-6">
+          <a href="/chronicle/{featuredNotes[0].slug}" class="block group mb-6">
             <article class="relative">
               {#if featuredNotes[0].hero_image_url}
                 <div class="relative">
@@ -236,7 +237,7 @@
         <!-- More Notes -->
         <div class="space-y-5 mb-8">
           {#each featuredNotes.slice(1) as note}
-            <a href="/{note.slug}" class="block group">
+            <a href="/chronicle/{note.slug}" class="block group">
               <article>
                 <div class="article-date mb-1">
                   {formatDateUppercase(note.published_at)}
@@ -252,9 +253,9 @@
 
         <!-- Guides Section -->
         <h2 class="section-label mb-4">GUIDES</h2>
-        <div class="grid grid-cols-2 gap-3 mb-8">
+        <div class="flex overflow-x-auto gap-3 mb-8 scroll-smooth">
           {#each guides as guide}
-            <a href="/{guide.slug}" class="block group">
+            <a href="/chronicle/{guide.slug}" class="block group flex-shrink-0 w-[45%]">
               <div class="relative aspect-[3/4] overflow-hidden">
                 <img 
                   src={guide.hero_image_url} 
@@ -300,7 +301,7 @@
       </aside>
 
       <!-- Center Column - News -->
-      <section class="col-span-6 border-r border-chronicle-border px-6 py-6">
+      <section class="col-span-6 border-r border-chronicle-border px-6 py-6 overflow-y-auto">
         <div class="flex items-center justify-between mb-6">
           <h2 class="section-label">NEWS</h2>
           <a href="/rss.xml" class="flex items-center gap-1 text-xs text-chronicle-text-muted hover:text-chronicle-text">
@@ -313,7 +314,7 @@
         
         <!-- Featured News Hero -->
         {#if newsArticles[0]}
-          <a href="/{newsArticles[0].slug}" class="block group mb-6">
+          <a href="/chronicle/{newsArticles[0].slug}" class="block group mb-6">
             <article class="relative overflow-hidden">
               <div class="relative aspect-[16/9]">
                 <img 
@@ -339,7 +340,7 @@
         <!-- News List -->
         <div class="space-y-0">
           {#each newsArticles as article, i}
-            <a href="/{article.slug}" class="block group py-4 border-b border-chronicle-border last:border-b-0">
+            <a href="/chronicle/{article.slug}" class="block group py-4 border-b border-chronicle-border last:border-b-0">
               <article class="flex gap-6">
                 <div class="w-32 flex-shrink-0 text-right">
                   <span class="article-date">
@@ -359,11 +360,11 @@
       </section>
 
       <!-- Right Column - Videos -->
-      <aside class="col-span-3 px-6 py-6">
+      <aside class="col-span-3 px-6 py-6 overflow-y-auto">
         <h2 class="section-label mb-6">VIDEOS</h2>
         <div class="space-y-5">
           {#each videos as video}
-            <a href="/{video.slug}" class="block group">
+            <a href="/chronicle/{video.slug}" class="block group">
               <article>
                 {#if video.hero_image_url}
                   <img 
@@ -386,65 +387,43 @@
 
     </div>
   </main>
-
-  <!-- Footer -->
-  <footer class="mt-20 border-t border-chronicle-border bg-chronicle-bg">
-    <div class="mx-auto max-w-[1600px] px-6 py-12">
-      <div class="grid grid-cols-12 gap-8">
-        <!-- Logo and Status -->
-        <div class="col-span-3">
-          <div class="amp-logo text-3xl text-chronicle-text mb-6">The 7th Signal</div>
-          <div class="flex items-center gap-2 text-sm text-chronicle-text-muted mb-4">
-            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            All Systems Operational
-          </div>
-          <div class="space-y-2 text-sm text-chronicle-text-muted">
-            <a href="/security" class="block hover:text-chronicle-text">Security</a>
-            <a href="/terms" class="block hover:text-chronicle-text">Terms of Service</a>
-          </div>
-        </div>
-
-        <!-- Product -->
-        <div class="col-span-2">
-          <h3 class="text-sm font-medium text-chronicle-text mb-4">Product</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="/dashboard" class="hover:text-chronicle-text">Dashboard</a></li>
-            <li><a href="/manual" class="hover:text-chronicle-text">Owner's Manual</a></li>
-            <li><a href="/models" class="hover:text-chronicle-text">Models</a></li>
-            <li><a href="/free" class="hover:text-chronicle-text">The 7th Signal Free</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources -->
-        <div class="col-span-2">
-          <h3 class="text-sm font-medium text-chronicle-text mb-4">Resources</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="/" class="hover:text-chronicle-text">The 7th Signal</a></li>
-            <li><a href="/pricing" class="hover:text-chronicle-text">Pricing</a></li>
-            <li><a href="/podcast" class="hover:text-chronicle-text">Podcast</a></li>
-            <li><a href="/press" class="hover:text-chronicle-text">Press Kit</a></li>
-          </ul>
-        </div>
-
-        <!-- Guides -->
-        <div class="col-span-2">
-          <h3 class="text-sm font-medium text-chronicle-text mb-4">Guides</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="/guides/build-agent" class="hover:text-chronicle-text">How to Build an Agent</a></li>
-            <li><a href="/guides/context" class="hover:text-chronicle-text">Context Management</a></li>
-          </ul>
-        </div>
-
-        <!-- Community -->
-        <div class="col-span-3">
-          <h3 class="text-sm font-medium text-chronicle-text mb-4">Community</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-muted">
-            <li><a href="https://twitter.com/the7thsignal" class="hover:text-chronicle-text">X @the7thsignal</a></li>
-            <li><a href="https://buildcrew.com" class="hover:text-chronicle-text">Build Crew</a></li>
-            <li><a href="https://youtube.com" class="hover:text-chronicle-text">YouTube</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
 </div>
+
+<style>
+  /* Amp-style vertical grid lines pattern */
+  .chronicle-grid {
+    position: relative;
+    background-image: 
+      repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(33.333% - 1px),
+        rgba(100, 130, 120, 0.12) calc(33.333% - 1px),
+        rgba(100, 130, 120, 0.12) 33.333%
+      );
+    background-size: 100% 100%;
+  }
+
+  /* Add subtle dashed effect overlay */
+  .chronicle-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+      repeating-linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 8px,
+        rgba(100, 130, 120, 0.06) 8px,
+        rgba(100, 130, 120, 0.06) 9px
+      );
+  }
+
+  /* Ensure content stays above the grid */
+  .chronicle-grid > * {
+    position: relative;
+    z-index: 1;
+  }
+</style>

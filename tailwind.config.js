@@ -5,10 +5,15 @@ export default {
     extend: {
       colors: {
         chronicle: {
-          bg: '#DFDFC1', // Warm beige background
-          text: '#595959', // Medium gray text
-          'text-light': '#8B8B8B', // Lighter gray for metadata
-          'text-dark': '#2D2D2D', // Darker text for emphasis
+          bg: '#0D1F1F', // Very dark teal background
+          'bg-card': '#1A3333', // Slightly lighter teal for cards
+          'bg-darker': '#0A1818', // Even darker for contrast
+          text: '#FFFFFF', // White text
+          'text-light': '#A0B0B0', // Light gray for metadata
+          'text-muted': '#708080', // Muted gray
+          teal: '#2D5555', // Medium teal
+          'teal-light': '#3D6565', // Lighter teal
+          accent: '#FF8C42', // Orange accent for buttons
         },
       },
       fontFamily: {

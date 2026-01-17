@@ -22,18 +22,18 @@
 
 <div class="min-h-screen bg-chronicle-bg">
   <!-- Header -->
-  <header class="border-b border-chronicle-teal bg-chronicle-bg-darker">
+  <header class="border-b border-chronicle-border bg-chronicle-bg">
     <nav class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-8">
           <a href="/" class="text-2xl font-bold text-chronicle-text">Chronicle</a>
           <div class="hidden md:flex gap-6">
-            <a href="/" class="text-sm text-chronicle-text-light hover:text-chronicle-text">Home</a>
-            <a href="/about" class="text-sm text-chronicle-text-light hover:text-chronicle-text">About</a>
+            <a href="/" class="text-sm text-chronicle-text-muted hover:text-chronicle-text">Home</a>
+            <a href="/about" class="text-sm text-chronicle-text-muted hover:text-chronicle-text">About</a>
           </div>
         </div>
         <div class="flex items-center gap-4">
-          <a href="/admin" class="text-sm text-chronicle-text-light hover:text-chronicle-text">Admin</a>
+          <a href="/admin" class="text-sm text-chronicle-text-muted hover:text-chronicle-text">Admin</a>
           <a href="/admin" class="rounded-md bg-chronicle-accent px-4 py-2 text-sm font-medium text-white hover:bg-orange-600">
             Dashboard
           </a>
@@ -44,7 +44,7 @@
 
   <!-- Hero Section -->
   {#if article.hero_image_url}
-    <div class="relative h-96 overflow-hidden bg-chronicle-teal">
+    <div class="relative h-96 overflow-hidden">
       <img 
         src={article.hero_image_url} 
         alt={article.title}
@@ -53,13 +53,13 @@
       <div class="absolute inset-0 bg-gradient-to-t from-chronicle-bg/90 to-transparent"></div>
     </div>
   {:else}
-    <div class="h-64 bg-gradient-to-br from-teal-800 to-teal-900"></div>
+    <div class="h-64 bg-gradient-to-br from-teal-700 to-teal-800"></div>
   {/if}
 
   <!-- Article Content -->
   <article class="mx-auto max-w-3xl px-6 -mt-32 relative z-10">
     <!-- Article Header -->
-    <div class="bg-chronicle-bg-card border border-chronicle-teal rounded-sm p-8 mb-8">
+    <div class="bg-chronicle-bg border border-chronicle-border p-8 mb-8">
       <div class="text-xs text-chronicle-text-muted uppercase tracking-wider mb-4">
         <a href="/" class="hover:text-chronicle-text">Chronicle</a>
         <span class="mx-2">›</span>
@@ -89,14 +89,14 @@
       </h1>
 
       {#if article.excerpt}
-        <p class="text-xl text-chronicle-text-light leading-relaxed">
+        <p class="text-xl text-chronicle-text-muted leading-relaxed">
           {article.excerpt}
         </p>
       {/if}
     </div>
 
     <!-- Article Body -->
-    <div class="bg-chronicle-bg-card border border-chronicle-teal rounded-sm p-8 mb-12">
+    <div class="bg-chronicle-bg border border-chronicle-border p-8 mb-12">
       <div class="prose prose-invert prose-lg max-w-none">
         {@html htmlContent}
       </div>
@@ -106,7 +106,7 @@
     <div class="mb-12">
       <a 
         href="/" 
-        class="inline-flex items-center gap-2 text-chronicle-text-light hover:text-chronicle-text font-medium"
+        class="inline-flex items-center gap-2 text-chronicle-text-muted hover:text-chronicle-text font-medium"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -117,32 +117,32 @@
   </article>
 
   <!-- Footer -->
-  <footer class="border-t border-chronicle-teal bg-chronicle-bg-darker mt-20">
+  <footer class="border-t border-chronicle-border bg-chronicle-bg mt-20">
     <div class="mx-auto max-w-7xl px-6 py-12">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h3 class="font-bold text-chronicle-text mb-4">Product</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-light">
+          <ul class="space-y-2 text-sm text-chronicle-text-muted">
             <li><a href="/" class="hover:text-chronicle-text">Home</a></li>
             <li><a href="/about" class="hover:text-chronicle-text">About</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-chronicle-text mb-4">Resources</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-light">
+          <ul class="space-y-2 text-sm text-chronicle-text-muted">
             <li><a href="/" class="hover:text-chronicle-text">Chronicle</a></li>
             <li><a href="/" class="hover:text-chronicle-text">Documentation</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-chronicle-text mb-4">Community</h3>
-          <ul class="space-y-2 text-sm text-chronicle-text-light">
+          <ul class="space-y-2 text-sm text-chronicle-text-muted">
             <li><a href="#" class="hover:text-chronicle-text">Twitter</a></li>
             <li><a href="#" class="hover:text-chronicle-text">GitHub</a></li>
           </ul>
         </div>
       </div>
-      <div class="mt-8 pt-8 border-t border-chronicle-teal text-sm text-chronicle-text-muted">
+      <div class="mt-8 pt-8 border-t border-chronicle-border text-sm text-chronicle-text-muted">
         <p>&copy; 2026 Chronicle. All rights reserved.</p>
       </div>
     </div>
@@ -163,7 +163,7 @@
   }
 
   :global(.prose-invert p) {
-    @apply text-chronicle-text-light leading-relaxed mb-4;
+    @apply text-chronicle-text-muted leading-relaxed mb-4;
   }
 
   :global(.prose-invert ul, .prose-invert ol) {
@@ -171,19 +171,19 @@
   }
 
   :global(.prose-invert li) {
-    @apply mb-2 text-chronicle-text-light;
+    @apply mb-2 text-chronicle-text-muted;
   }
 
   :global(.prose-invert code) {
-    @apply bg-chronicle-bg-darker px-2 py-1 rounded text-sm font-mono text-chronicle-text;
+    @apply bg-black/30 px-2 py-1 rounded text-sm font-mono text-chronicle-text;
   }
 
   :global(.prose-invert pre) {
-    @apply bg-chronicle-bg-darker border border-chronicle-teal p-4 rounded-sm overflow-x-auto my-4;
+    @apply bg-black/30 border border-chronicle-border p-4 rounded overflow-x-auto my-4;
   }
 
   :global(.prose-invert pre code) {
-    @apply bg-transparent p-0 text-chronicle-text-light;
+    @apply bg-transparent p-0 text-chronicle-text-muted;
   }
 
   :global(.prose-invert a) {
@@ -195,6 +195,6 @@
   }
 
   :global(.prose-invert blockquote) {
-    @apply border-l-4 border-chronicle-teal pl-4 italic text-chronicle-text-light my-4;
+    @apply border-l-4 border-chronicle-border pl-4 italic text-chronicle-text-muted my-4;
   }
 </style>

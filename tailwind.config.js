@@ -5,14 +5,10 @@ export default {
     extend: {
       colors: {
         chronicle: {
-          bg: '#0D1F1F', // Very dark teal background
-          'bg-card': '#1A3333', // Slightly lighter teal for cards
-          'bg-darker': '#0A1818', // Even darker for contrast
-          text: '#FFFFFF', // White text
-          'text-light': '#A0B0B0', // Light gray for metadata
-          'text-muted': '#708080', // Muted gray
-          teal: '#2D5555', // Medium teal
-          'teal-light': '#3D6565', // Lighter teal
+          bg: '#091c1f', // Main background - very dark teal
+          text: '#f7fff5', // Primary text - off-white
+          'text-muted': '#b6c2bb', // Muted text - light gray-green
+          border: '#2f4040', // Borders and dividers - medium dark teal
           accent: '#FF8C42', // Orange accent for buttons
         },
       },
